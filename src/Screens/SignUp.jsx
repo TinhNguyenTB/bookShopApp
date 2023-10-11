@@ -1,11 +1,37 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, StatusBar, TextInput, TouchableOpacity } from 'react-native'
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, StatusBar, TextInput, TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import authentication from '../../FirebaseConfig';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 const SignUp = () => {
     const [isVisbile, setIsVisbile] = useState(true);
     const nav = useNavigation();
+
+    const [userInformation, setUserInformation] = useState({
+        email: "",
+        password: ""
+    });
+    const { email, password } = userInformation;
+
+    const userAccount = () => {
+        createUserWithEmailAndPassword(authentication, email, password)
+            .then(() => {
+                Alert.alert('User account created & signed in!');
+            })
+            .catch(error => {
+                if (error.code === 'auth/email-already-in-use') {
+                    console.log('That email address is already in use!');
+                }
+
+                if (error.code === 'auth/invalid-email') {
+                    console.log('That email address is invalid!');
+                }
+
+                console.error(error);
+            });
+    }
 
     return (
         <SafeAreaView style={styles.bg}>
@@ -20,22 +46,29 @@ const SignUp = () => {
                     <TextInput style={styles.input} keyboardType='name-phone-pad' maxLength={30} />
 
                     <Text style={styles.lable}>Email</Text>
-                    <TextInput style={styles.input} keyboardType='email-address' />
+                    <TextInput style={styles.input} keyboardType='email-address'
+                        value={email}
+                        onChangeText={(value) => {
+                            setUserInformation({ ...userInformation, email: value })
+                        }}
+                    />
 
                     <Text style={styles.lable}>Mật khẩu</Text>
                     <View style={styles.viewPassword}>
                         <TextInput style={{ flex: 0.9, marginTop: 10 }}
                             keyboardType='ascii-capable' maxLength={16}
                             secureTextEntry={isVisbile}
+                            value={password}
+                            onChangeText={(value) => {
+                                setUserInformation({ ...userInformation, password: value })
+                            }}
                         />
                         <Feather onPress={() => {
                             setIsVisbile(!isVisbile)
                         }} name={isVisbile ? "eye-off" : "eye"} size={24} color="black" />
                     </View>
 
-                    <TouchableOpacity style={styles.button} onPress={() => {
-                        console.log("Press");
-                    }}>
+                    <TouchableOpacity style={styles.button} onPress={userAccount}>
                         <Text style={styles.textButton}>
                             Đăng ký
                         </Text>

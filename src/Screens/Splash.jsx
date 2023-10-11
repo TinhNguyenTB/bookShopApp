@@ -8,7 +8,7 @@ const Splash = () => {
     useEffect(() => {
         setTimeout(() => {
             nav.replace('SignUp');
-        }, 4000);
+        }, 3000);
     }, []);
 
     return (
