@@ -5,6 +5,7 @@ import HomeIcon from '../Components/HomeIcon';
 import HomeSearch from '../Components/HomeSearch';
 import HomeBanner from '../Components/HomeBanner';
 import ProductTitle from '../Components/ProductTitle';
+import ProductCarousel from '../Components/ProductCarousel';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
                     <HomeSearch />
                     <HomeBanner />
                     <ProductTitle title={'Ưu đãi độc quyền'} />
+                    <ProductCarousel />
                 </View>
             </ScrollView>
         </SafeAreaView>
