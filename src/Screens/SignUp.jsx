@@ -1,32 +1,43 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, StatusBar, TextInput, TouchableOpacity, Alert } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, Image, StatusBar, TextInput, TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import authentication from '../../FirebaseConfig';
+import { authentication, database } from '../../FirebaseConfig';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { setDoc, doc } from 'firebase/firestore';
+import uuid from 'react-native-uuid';
 
 const SignUp = () => {
     const [isVisbile, setIsVisbile] = useState(true);
     const nav = useNavigation();
 
     const [userInformation, setUserInformation] = useState({
+        username: "",
         email: "",
         password: ""
     });
-    const { email, password } = userInformation;
+    const { username, email, password } = userInformation;
+
+    const uid = uuid.v4();
 
     const userAccount = () => {
         createUserWithEmailAndPassword(authentication, email, password)
             .then(() => {
-                Alert.alert('User account created & signed in!');
+                nav.navigate('Login')
+                setDoc(doc(database, "users", uid), {
+                    username: username,
+                    email: email,
+                    id: authentication.currentUser.uid
+                })
             })
             .catch(error => {
                 if (error.code === 'auth/email-already-in-use') {
-                    console.log('That email address is already in use!');
+                    Alert.alert('Email này đã được sử dụng!');
                 }
 
                 if (error.code === 'auth/invalid-email') {
-                    console.log('That email address is invalid!');
+                    Alert.alert('Địa chỉ email không hợp lệ!');
                 }
 
                 console.error(error);
@@ -43,7 +54,12 @@ const SignUp = () => {
                     </Text>
 
                     <Text style={styles.lable}>Tên người dùng</Text>
-                    <TextInput style={styles.input} keyboardType='name-phone-pad' maxLength={30} />
+                    <TextInput maxLength={30} style={styles.input} keyboardType='name-phone-pad'
+                        value={username}
+                        onChangeText={(value) => {
+                            setUserInformation({ ...userInformation, username: value })
+                        }}
+                    />
 
                     <Text style={styles.lable}>Email</Text>
                     <TextInput style={styles.input} keyboardType='email-address'
