@@ -6,8 +6,10 @@ import HomeSearch from '../Components/HomeSearch';
 import HomeBanner from '../Components/HomeBanner';
 import ProductTitle from '../Components/ProductTitle';
 import ProductCarousel from '../Components/ProductCarousel';
+import { selling } from '../Utils/Data';
 
 const Home = () => {
+    const bookData = require('../Utils/books.json')
     return (
         <SafeAreaView style={styles.areaView}>
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
@@ -16,7 +18,9 @@ const Home = () => {
                     <HomeSearch />
                     <HomeBanner />
                     <ProductTitle title={'Ưu đãi độc quyền'} />
-                    <ProductCarousel />
+                    <ProductCarousel data={bookData} />
+                    <ProductTitle title={'Sản phẩm bán chạy'} />
+                    <ProductCarousel data={selling} />
                 </View>
             </ScrollView>
         </SafeAreaView>

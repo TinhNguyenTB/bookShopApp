@@ -1,0 +1,151 @@
+[
+    {
+        "name": "Nhà giả kim",
+        "price": 66450,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/nha-gia-kim.jpeg",
+        "author": "Paulo Coelho",
+        "language": "Vietnamese",
+        "descriptions": "Tiểu thuyết Nhà giả kim của Paulo Coelho như một câu chuyện cổ tích giản dị, nhân ái, giàu chất thơ, thấm đẫm những minh triết huyền bí của phương Đông. Trong lần xuất bản đầu tiên tại Brazil vào năm 1988, sách chỉ bán được 900 bản. Nhưng, với số phận đặc biệt của cuốn sách dành cho toàn nhân loại, vượt ra ngoài biên giới quốc gia, Nhà giả kim đã làm rung động hàng triệu tâm hồn, trở thành một trong những cuốn sách bán chạy nhất mọi thời đại, và có thể làm thay đổi cuộc đời người đọc."
+    },
+    {
+        "name": "Hai số phận",
+        "price": 185000,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/hai-so-phan.jpeg",
+        "author": "Jeffrey Archer",
+        "language": "Vietnamese",
+        "descriptions": "'Hai số phận' làm rung động mọi trái tim quả cảm, nó có thể làm thay đổi cả cuộc đời bạn. Đọc cuốn sách này, bạn sẽ bị chi phối bởi cá tính của hai nhân vật chính, hoặc bạn là Kane, hoặc sẽ là Abel, không thể nào nhầm lẫn. Và điều đó sẽ khiến bạn thấy được chính mình."
+    },
+    {
+        "name": "Bố già",
+        "price": 139500,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/7eca66c10e5f99f14325733bf53aa425.jpeg",
+        "author": "Mario Puzo",
+        "language": "Vietnamese",
+        "descriptions": "Thế giới ngầm được phản ánh trong tiểu thuyết Bố Già là sự gặp gỡ giữa một bên là ý chí cương cường và nền tảng gia tộc chặt chẽ theo truyền thống mafia xứ Sicily với một bên là xã hội Mỹ nhập nhằng đen trắng, mảnh đất màu mỡ cho những cơ hội làm ăn bất chính hứa hẹn những món lợi kếch xù. Trong thế giới ấy, hình tượng Bố Già được tác giả dày công khắc họa đã trở thành bức chân dung bất hủ trong lòng người đọc. Từ một kẻ nhập cư tay trắng đến ông trùm tột đỉnh quyền uy, Don Vito Corleone là con rắn hổ mang thâm trầm, nguy hiểm khiến kẻ thù phải kiềng nể, e dè, nhưng cũng được bạn bè, thân quyến xem như một đấng toàn năng đầy nghĩa khí."
+    },
+    {
+        "name": "Đại gia Gatsby",
+        "price": 50000,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/dai-gia-gatsby.jpeg",
+        "author": "F. Scott Fitzgerald",
+        "language": "Vietnamese",
+        "descriptions": "Gatsby, nhân vật chính của câu chuyện, những tưởng sẽ có tất cả – tiền bạc, quyền lực, và sau rốt là tình yêu -, nhưng rồi ảo tưởng tình yêu đó tan vỡ thật đau đớn, theo sau là cái chết tức tưởi của Gatsby, để cuối cùng lập tức bị người đời quên lãng."
+    },
+    {
+        "name": "Ba người thầy vĩ đại",
+        "price": 90850,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/3-nguoi-thay-vi-dai-4.jpeg",
+        "author": "Robin Sharma",
+        "language": "Vietnamese",
+        "descriptions": "Tôi đã nếm trải nhiều thất bại trong hành trình đi qua những tháng ngày của mình. Thế nhưng, mỗi chướng ngại cuối cùng đều lại chính là một bàn đạp đưa tôi gần hơn nữa tới chân lý trong tâm khảm và cuộc đời tốt đẹp nhất của mình"
+    },
+    {
+        "name": "Vị tu sĩ bán chiếc Ferrari",
+        "price": 72000,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/7414124cada534c1c8145ed5b6d2399e.jpeg",
+        "author": "Robin Sharma",
+        "language": "Vietnamese",
+        "descriptions": "Sách kể về Julian Manter, một luật sư thành công nhưng trong sâu thẳm anh lại là một con người đầy đau khổ, căng thẳng. Trong một vụ kiện, Julian đột quỵ và phải nhập viện. Ngay sau khi xuất viện, Julian bỗng…biến mất."
+    },
+    {
+        "name": "Hành trình về Phương Đông",
+        "price": 89000,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/hanh-trinh-ve-phuong-dong.jpeg",
+        "author": "Baird T. Spalding",
+        "language": "Vietnamese",
+        "descriptions": "Hành Trình Về Phương Đông kể về những trải nghiệm của một đoàn khoa học gồm các chuyên gia hàng đầu của Hội Khoa Học Hoàng Gia Anh được cử sang Ấn Độ nghiên cứu về huyền học và những khả năng siêu nhiên của con người."
+    },
+    {
+        "name": "Sức mạnh của hiện tại",
+        "price": 136650,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/833d77d33b66559a5755f0582be30494.jpeg",
+        "author": "Eckhart Tolle",
+        "language": "Vietnamese",
+        "descriptions": "Chân lý mà bậc thầy về tâm linh – Eckhart Tolle, truyền tải trong tác phẩm đặc biệt này chính là phân tích được nỗi đau khổ tinh thần của con người xảy ra triền miên khi luôn chìm đắm suy nghĩ vào quá khứ và không nhận thức được giá trị và sức mạnh của Hiện tại. Khi tập trung vào hiện tại, bạn sẽ vượt lên tất cả những suy nghĩ tiêu cực, tìm được bản ngã của mình và tinh thần của bạn sẽ thanh thản hơn rất nhiều."
+    },
+    {
+        "name": "Sức mạnh của tĩnh lặng",
+        "price": 45300,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2021/03/6b76d7be9aebd04897db41f1cf0533fa.jpeg",
+        "author": "Eckhart Tolle",
+        "language": "Vietnamese",
+        "descriptions": "Cuốn sách có thể giúp bạn vun bồi sự vững chải, khả năng trầm lắng ở tâm hồn bên ngoài đang xảy ra những biến động gì đi nữa. Sức mạnh của tĩnh lặng có thể giúp bạn vượt qua những tình huống thử thách trong đời sống cá nhân và tiếp xúc được với một chiều không gian yên tĩnh và an bình ở bên trong."
+    },
+    {
+        "name": "Dấu chân trên cát",
+        "price": 142500,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/dau-chan-tren-cat.jpeg",
+        "author": "Nguyên Phong",
+        "language": "Vietnamese",
+        "descriptions": "Bạn sẽ không thể rời mắt khỏi những dòng văn viết với ý tứ sâu sắc của một người con xa quê hương: 'Người Ai Cập có thành ngữ: 'Kẻ nào đã uống nước sông Nile thì không thể nào uống nước ở đâu được nữa'. Quả thế tuy sống tại Hy Lạp nhưng không bao giờ tôi có thể quên được Ai Cập quê hương thân yêu của tôi."
+    },
+    {
+        "name": "Bên rặng tuyết sơn",
+        "price": 97340,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/ben-rang-tuyet-son.jpeg",
+        "author": "Swami Amar Jyoti",
+        "language": "Vietnamese",
+        "descriptions": "Câu chuyện bắt đầu từ việc Satyakam đến thung lũng Saraswati để tầm sư học đạo. Nhưng không ngờ rằng, khi đến đây, thì vị đạo sư già đã chờ anh rồi, không những thế, ông còn nói đúng tên anh và biết anh đến gặp ông để làm gì dù rằng anh chưa hề xưng tên cũng như chưa nói mục đích của mình đến đây."
+    },
+    {
+        "name": "Hiểu về trái tim",
+        "price": 126000,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/hieu-ve-trai-tim.jpeg"
+    },
+    {
+        "name": "Nghĩ giàu làm giàu",
+        "price": 119350,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/think-and-grow-rich.jpeg",
+        "author": "Napoleon Hill",
+        "language": "Vietnamese",
+        "descriptions": "Cuốn sách chứa đựng nhiều hơn những gì mà cuốn sách giải thích về sức mạnh của những nguyên tắc. Phần hấp dẫn nhất của cuốn sách chính là những điều phi thường, những thông điệp trong cuốn sách được viết ra từ rất lâu nhưng vẫn mang tính 'thời đại'. Ông đã bàn về những quan niệm như quản lý nhóm, dịch vụ chăm sóc khách hàng hoàn hảo, những công cụ hữu hình, trí tuệ tập thể và mục tiêu cần được viết ra trước khi hành động."
+    },
+    {
+        "name": "Người giàu có nhất thành Babylon",
+        "price": 66100,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/giau-nhat-babylon.png",
+        "author": "GEORGE SAMUEL CLASON",
+        "language": "Vietnamese",
+        "descriptions": "Cuốn sách nói tới người đàn ông giàu có nhất thành Babylon tên là Arkad. Ông là một anh thợ khắc gỗ lúc còn trẻ và rất may mắn học được bí quyết để làm giàu. Và khi trở nên giàu có, ông rất sẵn sàng chia sẻ những điều đã giúp ông giàu có cho người khác."
+    },
+    {
+        "name": "Người bán hàng vĩ đại nhất thế giới",
+        "price": 58000,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/nguoi-ban-hang-vi-dai-nhat-the-gioi.jpeg",
+        "author": "Og Mandino",
+        "language": "Vietnamese",
+        "descriptions": "Người bán hàng vĩ đại nhất thế giới của Og Mandino là một hành trình dài về câu chuyện của Hafid, một cậu bé chăn lạc đà nghèo, ở Jerusalem cổ đại. Cậu bé đã học được từ một thương nhân giàu có và thành công về những bí quyết để trở thành một người bán hàng vĩ đại."
+    },
+    {
+        "name": "Dốc hết trái tim",
+        "price": 113000,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/doc-het-trai-tim.jpeg",
+        "author": "Howard Schultz",
+        "language": "Vietnamese",
+        "descriptions": "Thành công của Công ty Cà phê Starbucks là một trong những câu chuyện kỳ diệu nhất về kinh doanh trong suốt nhiều thập kỷ. Một cửa hàng nhỏ ven sông ở Seattle rốt cuộc lại lớn mạnh và phát triển nên hơn một ngàn sáu trăm cửa hàng trên khắp thế giới và mỗi ngày lại có thêm một cửa hàng mới mọc lên."
+    },
+    {
+        "name": "Mặt dày tâm đen",
+        "price": 106800,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/mat-day-tam-den.jpeg",
+        "author": "Chin - Ning Chu",
+        "language": "Vietnamese",
+        "descriptions": "Mặt dày tâm đen là cuốn cẩm nang kết hợp tri thức Đông Tây, khám phá cách thức áp dụng binh pháp trận mạc của Á Đông cùng những tư duy văn hóa để có được tinh thần bền bỉ và rèn luyện những kỹ năng kinh doanh trong thời đại ngày nay."
+    },
+    {
+        "name": "Hiệu ứng chim mồi",
+        "price": 58100,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/hieu-ung-chim-moi.jpeg",
+        "author": "Quốc Khanh",
+        "language": "Vietnamese",
+        "descriptions": "Quyển sách được cấu trúc thành các phần nhỏ với lý thuyết và ứng dụng đan xen. Mỗi hiện tượng hay kỹ thuật bán hàng đều được giải thích bằng lý thuyết, và mỗi lý thuyết đều có các ứng dụng minh họa, nhằm giúp các bạn độc giả có thể có kiến thức vững chắc và linh hoạt."
+    },
+    {
+        "name": "Lối sống tối giản của người Nhật",
+        "price": 66450,
+        "img": "https://thuatgiakim.com/wp-content/uploads/2022/05/loi-song-toi-gian-nguoi-nhat.jpeg",
+        "author": "Sasaki Fumio",
+        "language": "Vietnamese",
+        "descriptions": "Lối sống tối giản của người Nhật gồm có năm chương, trong đó, chương một, tác giả sẽ giới thiệu cho bạn lối sống tối giản là gì, đưa ra định nghĩa của anh về nó. Sau đó anh sẽ đưa ra lý do vì sao mình lại theo lối sống này sau nhiều năm sống trong căn phòng của bản thân."
+    }
+]

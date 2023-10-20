@@ -1,30 +1,36 @@
-import { StyleSheet, Text, FlatList, View, Image } from 'react-native'
+import { StyleSheet, Text, FlatList, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react';
-import { books } from '../Utils/Data';
 import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
-import { FontAwesome } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-const ProductCarousel = () => {
+const ProductCarousel = ({ data }) => {
+    const nav = useNavigation();
     return (
         <View>
             <FlatList horizontal
                 showsHorizontalScrollIndicator={false}
-                data={books}
+                data={data}
                 renderItem={({ item, index }) => (
-                    <View style={styles.box}>
+                    <TouchableOpacity style={styles.box}
+                        activeOpacity={0.7}
+                        onPress={() => {
+                            nav.navigate('Details', { info: item })
+                        }}
+                    >
                         <Image style={styles.image} source={{ uri: item.img }} />
-                        <View style={{ paddingHorizontal: 10, gap: 3, alignItems: 'center' }}>
-                            <Text style={{ fontSize: 16, fontWeight: '600' }}>
+                        <View style={styles.col}>
+                            <Text style={styles.name}>
                                 {item.name}
                             </Text>
                             <View style={styles.row}>
-                                <Text style={{ fontSize: 14, fontWeight: 'bold' }}>
+                                <Text style={styles.price}>
                                     {(item.price / 1000).toFixed(3)}đ
                                 </Text>
-                                <FontAwesome name="plus-square" size={30} color="lightgreen" />
+                                <MaterialIcons name="add-shopping-cart" size={28} color="#fc5a31" />
                             </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 )}
             />
         </View>
@@ -48,10 +54,27 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         resizeMode: 'contain'
     },
+    col: {
+        paddingHorizontal: 10,
+        gap: 3,
+        alignItems: 'center',
+        flex: 1
+    },
+    name: {
+        fontSize: 14,
+        fontWeight: '600',
+        flex: 0.5
+    },
     row: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 15,
+        flex: 0.5,
+        justifyContent: 'flex-end',
+        gap: 20,
         marginTop: 5
+    },
+    price: {
+        fontSize: 16,
+        fontWeight: 'bold'
     }
 })

@@ -1,97 +1,37 @@
-export const books = [
+export const selling = [
     {
-        name: "Nhà giả kim",
-        price: 66450,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/nha-gia-kim.jpeg"
+        name: "Đắc nhân tâm",
+        price: 73000,
+        img: "https://salt.tikicdn.com/cache/368x368/ts/product/2e/eb/ad/3e776fea882655620441ec9f6eba9a04.jpg.webp"
     },
     {
-        name: "Hai số phận",
-        price: 185000,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/hai-so-phan.jpeg"
+        name: "Đọc vị bất kỳ ai",
+        price: 57300,
+        img: "https://salt.tikicdn.com/cache/368x368/ts/product/8f/d5/8f/cccac7a0cf0851b0d3d401a243e27a23.png.webp"
     },
     {
-        name: "Bố già",
-        price: 139500,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/7eca66c10e5f99f14325733bf53aa425.jpeg"
+        name: "Nghĩ lớn để thành công",
+        price: 113600,
+        img: "https://salt.tikicdn.com/cache/368x368/ts/product/e6/8e/21/9dc46d19345314dd319a58f46c718073.jpg.webp"
     },
     {
-        name: "Đại gia Gatsby",
-        price: 50000,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/dai-gia-gatsby.jpeg"
+        name: "Thói quen thứ 8",
+        price: 150651,
+        img: "https://salt.tikicdn.com/cache/368x368/ts/product/f7/e6/34/fda2b9be98d55fc38b335aaf8bea8653.jpg.webp"
     },
     {
-        name: "Ba người thầy vĩ đại",
-        price: 90850,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/3-nguoi-thay-vi-dai-4.jpeg"
+        name: "Khác biệt hay là chết",
+        price: 103700,
+        img: "https://salt.tikicdn.com/cache/368x368/ts/product/1a/1a/f4/ee747c4eb73ee5c2ad50c44e111b8e7e.jpg.webp"
     },
     {
-        name: "Vị tu sĩ bán chiếc Ferrari",
-        price: 72000,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/7414124cada534c1c8145ed5b6d2399e.jpeg"
+        name: "Làm điều quan trọng",
+        price: 151350,
+        img: "https://salt.tikicdn.com/cache/368x368/ts/product/72/c0/4b/3da07a52d42d314058dddf9fc50edca8.jpg.webp"
     },
     {
-        name: "Hành trình về Phương Đông",
-        price: 89000,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/hanh-trinh-ve-phuong-dong.jpeg"
-    },
-    {
-        name: "Sức mạnh của hiện tại",
-        price: 136650,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/833d77d33b66559a5755f0582be30494.jpeg"
-    },
-    {
-        name: "Sức mạnh của tĩnh lặng",
-        price: 45300,
-        img: "https://thuatgiakim.com/wp-content/uploads/2021/03/6b76d7be9aebd04897db41f1cf0533fa.jpeg"
-    },
-    {
-        name: "Dấu chân trên cát",
-        price: 142500,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/dau-chan-tren-cat.jpeg"
-    },
-    {
-        name: "Bên rặng tuyết sơn",
-        price: 97340,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/ben-rang-tuyet-son.jpeg"
-    },
-    {
-        name: "Hiểu về trái tim",
-        price: 126000,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/hieu-ve-trai-tim.jpeg"
-    },
-    {
-        name: "Nghĩ giàu làm giàu",
-        price: 119350,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/think-and-grow-rich.jpeg"
-    },
-    {
-        name: "Người giàu có nhất thành Babylon",
-        price: 66100,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/giau-nhat-babylon.png"
-    },
-    {
-        name: "Người bán hàng vĩ đại nhất thế giới",
-        price: 58000,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/nguoi-ban-hang-vi-dai-nhat-the-gioi.jpeg"
-    },
-    {
-        name: "Dốc hết trái tim",
-        price: 113000,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/doc-het-trai-tim.jpeg"
-    },
-    {
-        name: "Mặt dày tâm đen",
-        price: 106800,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/mat-day-tam-den.jpeg"
-    },
-    {
-        name: "Hiệu ứng chim mồi",
-        price: 58100,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/hieu-ung-chim-moi.jpeg"
-    },
-    {
-        name: "Lối sống tối giản của người Nhật",
-        price: 66450,
-        img: "https://thuatgiakim.com/wp-content/uploads/2022/05/loi-song-toi-gian-nguoi-nhat.jpeg"
+        name: "Trở thành người ảnh hưởng",
+        price: 84000,
+        img: "https://salt.tikicdn.com/cache/368x368/ts/product/43/21/21/bbf931847933ff10a7733867371a48ca.png.webp"
     }
 ]

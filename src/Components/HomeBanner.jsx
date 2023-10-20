@@ -14,7 +14,7 @@ export default HomeBanner
 
 const styles = StyleSheet.create({
     img: {
-        height: responsiveHeight(12),
+        height: responsiveHeight(15),
         width: responsiveWidth(90)
     }
 })
