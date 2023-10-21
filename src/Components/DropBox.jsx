@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import React, { useState } from 'react';
 import { AntDesign } from '@expo/vector-icons';
 
@@ -8,13 +8,13 @@ const DropBox = ({ data }) => {
 
     return (
         <View>
-            <TouchableOpacity
+            <TouchableOpacity activeOpacity={0.5}
                 style={styles.button}
                 onPress={() => {
                     setToggle(!toggle);
                 }}
             >
-                <Text>Mo ta</Text>
+                <Text style={styles.descriptions}>Mô tả</Text>
                 <AntDesign name={toggle ? "down" : "right"} size={24} color="black" />
             </TouchableOpacity>
             {toggle ? <Text>{data}</Text> : null}
@@ -33,5 +33,9 @@ const styles = StyleSheet.create({
         borderBottomWidth: 2,
         marginBottom: 10,
         paddingVertical: 15
+    },
+    descriptions: {
+        fontSize: 16,
+        fontWeight: '600'
     }
 })

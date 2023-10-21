@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     img: {
-        height: 70,
-        width: 70
+        height: 50,
+        width: 50
     }
 })

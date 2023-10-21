@@ -1,11 +1,17 @@
 import { StyleSheet, Text, FlatList, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react';
 import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
-import { MaterialIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart } from '../Redux/CartSlice';
+import { showMessage } from "react-native-flash-message";
 
 const ProductCarousel = ({ data }) => {
     const nav = useNavigation();
+    const dispatch = useDispatch();
+    const cartData = useSelector((state) => state.CartSlice);
+
     return (
         <View>
             <FlatList horizontal
@@ -27,7 +33,33 @@ const ProductCarousel = ({ data }) => {
                                 <Text style={styles.price}>
                                     {(item.price / 1000).toFixed(3)}đ
                                 </Text>
-                                <MaterialIcons name="add-shopping-cart" size={28} color="#fc5a31" />
+                                {
+                                    cartData.find((value) => value.name === item.name) ?
+                                        (
+                                            <AntDesign name="minuscircle" size={30} color="green" onPress={() => {
+                                                dispatch(removeFromCart(item));
+                                                showMessage({
+                                                    message: "Thông báo",
+                                                    description: `Đã xóa '${item.name}' khỏi giỏ hàng.`,
+                                                    type: "warning",
+                                                    icon: () => <AntDesign name="delete" size={24} color="white" style={{ marginRight: 20 }} />
+                                                });
+                                            }} />
+                                        )
+                                        :
+                                        (
+                                            <AntDesign name="pluscircle" size={30} color="green" onPress={() => {
+                                                dispatch(addToCart(item));
+                                                showMessage({
+                                                    message: "Thông báo",
+                                                    description: `Đã thêm '${item.name}' vào giỏ hàng.`,
+                                                    type: "success",
+                                                    icon: () => <AntDesign name="checkcircle" size={24} color="white" style={{ marginRight: 20 }} />
+                                                });
+                                            }} />
+                                        )
+                                }
+
                             </View>
                         </View>
                     </TouchableOpacity>

@@ -28,8 +28,8 @@ const CartSlice = createSlice({
         },
         deCrementQuantity: (state, actions) => {
             const isAvailable = state.find((value) => value.name === actions.payload.name);
-            if (isAvailable == 1) {
-                isAvailable = 1; // số lượng ít nhất là 1
+            if (isAvailable.quantity == 1) {
+                isAvailable.quantity = 1; // số lượng ít nhất là 1
             }
             else {
                 isAvailable.quantity--;

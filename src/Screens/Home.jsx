@@ -1,26 +1,27 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import HomeIcon from '../Components/HomeIcon';
 import HomeSearch from '../Components/HomeSearch';
 import HomeBanner from '../Components/HomeBanner';
 import ProductTitle from '../Components/ProductTitle';
 import ProductCarousel from '../Components/ProductCarousel';
-import { selling } from '../Utils/Data';
+import FlashMessage from "react-native-flash-message";
+
+const bookData = require('../Utils/books.json');
+const bookSelling = require('../Utils/selling.json');
 
 const Home = () => {
-    const bookData = require('../Utils/books.json')
     return (
         <SafeAreaView style={styles.areaView}>
+            <FlashMessage />
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.view}>
-                    <HomeIcon />
                     <HomeSearch />
                     <HomeBanner />
                     <ProductTitle title={'Ưu đãi độc quyền'} />
                     <ProductCarousel data={bookData} />
                     <ProductTitle title={'Sản phẩm bán chạy'} />
-                    <ProductCarousel data={selling} />
+                    <ProductCarousel data={bookSelling} />
                 </View>
             </ScrollView>
         </SafeAreaView>
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
     areaView: {
         flex: 1,
         backgroundColor: 'white',
+        paddingTop: 10
     },
     scrollView: {
         paddingHorizontal: 20,

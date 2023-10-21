@@ -17,7 +17,7 @@ const Login = () => {
 
     const loginUser = () => {
         signInWithEmailAndPassword(authentication, email, password).then((value) => {
-            nav.replace('Home')
+            nav.replace('Tabs')
         }).catch((err) => {
             Alert.alert(err.message)
         })
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 40,
-        backgroundColor: 'lightgreen',
+        backgroundColor: 'green',
         borderRadius: 20,
         height: 50
     },

@@ -5,7 +5,7 @@ import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimen
 const HomeBanner = () => {
     return (
         <View>
-            <Image resizeMode='stretch' style={styles.img} source={require('../assets/BannerBookshop.png')} />
+            <Image resizeMode='contain' style={styles.img} source={require('../assets/BannerBookshop.png')} />
         </View>
     )
 }
