@@ -41,7 +41,7 @@ const ProductCarousel = ({ data }) => {
                                                 showMessage({
                                                     message: "Thông báo",
                                                     description: `Đã xóa '${item.name}' khỏi giỏ hàng.`,
-                                                    type: "warning",
+                                                    type: 'danger',
                                                     icon: () => <AntDesign name="delete" size={24} color="white" style={{ marginRight: 20 }} />
                                                 });
                                             }} />

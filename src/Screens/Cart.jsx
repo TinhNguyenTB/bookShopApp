@@ -33,26 +33,27 @@ const Cart = () => {
                                 <Image style={styles.image} source={{ uri: item.img }} />
                             </View>
                             <View style={styles.boxRight}>
+                                <Text style={{ fontSize: 17, fontWeight: '500' }}>
+                                    {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+                                </Text>
                                 <View style={styles.row}>
-                                    <Text style={{ fontSize: 18, fontWeight: '500' }}>
-                                        {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+                                    <Text style={{ fontSize: 16, fontWeight: '500' }}>
+                                        Giá: {(item.price / 1000).toFixed(3)}đ
                                     </Text>
                                     <AntDesign name="delete" size={30} color="red" onPress={() => {
                                         dispatch(removeFromCart(item));
                                     }} />
                                 </View>
-                                <Text style={{ fontSize: 16, fontWeight: '500' }}>
-                                    Giá: {(item.price / 1000).toFixed(3)}đ
-                                </Text>
+
                                 <View style={styles.row}>
                                     <View style={[styles.row, styles.gap10]}>
-                                        <AntDesign name="minuscircle" size={30} color="#53b175" onPress={() => {
+                                        <AntDesign name="minuscircle" size={30} color="green" onPress={() => {
                                             dispatch(deCrementQuantity(item))
                                         }} />
                                         <Text style={{ fontSize: 16 }}>
                                             {item.quantity}
                                         </Text>
-                                        <AntDesign name="pluscircle" size={30} color="#53b175" onPress={() => {
+                                        <AntDesign name="pluscircle" size={30} color="green" onPress={() => {
                                             dispatch(inCrementQuantity(item))
                                         }} />
                                     </View>

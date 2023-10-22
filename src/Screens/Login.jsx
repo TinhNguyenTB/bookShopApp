@@ -66,7 +66,7 @@ const Login = () => {
                         <TouchableOpacity onPress={() => {
                             nav.navigate('SignUp')
                         }}>
-                            <Text style={{ fontSize: 16, fontWeight: '600', color: 'lightgreen' }}>
+                            <Text style={{ fontSize: 16, fontWeight: '600', color: 'green' }}>
                                 Đăng ký
                             </Text>
                         </TouchableOpacity>

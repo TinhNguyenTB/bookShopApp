@@ -5,10 +5,11 @@ import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import DropBox from '../Components/DropBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../Redux/CartSlice';
+import { addToFavourite, removeFromFavourite } from '../Redux/FavouriteSlice';
 
 
 const Details = ({ route }) => {
@@ -17,9 +18,12 @@ const Details = ({ route }) => {
     const nav = useNavigation();
     const dispatch = useDispatch();
     const cartData = useSelector((state) => state.CartSlice);
+    const favouriteData = useSelector((state) => state.FavouriteSlice);
 
     return (
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={{ backgroundColor: 'white' }}>
             <SafeAreaView style={styles.container}>
                 <StatusBar backgroundColor='white' />
                 <View style={{ marginTop: 15 }}>
@@ -35,7 +39,21 @@ const Details = ({ route }) => {
                         <Text style={styles.name}>
                             {name.charAt(0).toUpperCase() + name.slice(1)}
                         </Text>
-                        <MaterialIcons name="favorite-border" size={30} color="black" />
+                        {
+                            favouriteData.find((value) => value.name === productData.name) ?
+                                (
+                                    <AntDesign name="heart" size={30} color="red" onPress={() => {
+                                        dispatch(removeFromFavourite(productData));
+                                    }} />
+                                )
+                                :
+                                (
+                                    <AntDesign name="hearto" size={30} color="black" onPress={() => {
+                                        dispatch(addToFavourite(productData));
+                                    }} />
+                                )
+                        }
+
                     </View>
                     <Text style={styles.price}>
                         Giá: {(price / 1000).toFixed(3)}đ
@@ -63,7 +81,6 @@ const Details = ({ route }) => {
                                         activeOpacity={0.5}
                                         onPress={() => {
                                             dispatch(addToCart(productData));
-                                            nav.navigate('Cart')
                                         }}
                                     >
                                         <Text style={{ fontSize: 18, fontWeight: '700', color: 'white' }}>
@@ -120,7 +137,7 @@ const styles = StyleSheet.create({
     },
     viewButton: {
         flex: 0.9,
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
     },
     btnAddToCart: {
         backgroundColor: 'green',

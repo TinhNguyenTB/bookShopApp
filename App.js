@@ -10,13 +10,11 @@ import Cart from './src/Screens/Cart';
 import { Provider } from 'react-redux';
 import { Store } from './src/Redux/Store';
 
-
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <Provider store={Store}>
-
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName='Splash'
@@ -34,6 +32,7 @@ export default function App() {
           <Stack.Screen name="Details" component={Details} />
           <Stack.Screen name="Cart" component={Cart} />
         </Stack.Navigator>
+
       </NavigationContainer>
     </Provider>
   );
