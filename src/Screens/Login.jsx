@@ -16,7 +16,7 @@ const Login = () => {
     const { email, password } = loginInformation;
 
     const loginUser = () => {
-        signInWithEmailAndPassword(authentication, email, password).then((value) => {
+        signInWithEmailAndPassword(authentication, email, password).then(() => {
             nav.replace('Tabs')
         }).catch((err) => {
             Alert.alert(err.message)
