@@ -3,8 +3,7 @@ import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { authentication } from '../../FirebaseConfig';
+import { firebase } from '../../FirebaseConfig';
 
 const Login = () => {
     const [isVisbile, setIsVisbile] = useState(true);
@@ -15,12 +14,22 @@ const Login = () => {
     });
     const { email, password } = loginInformation;
 
-    const loginUser = () => {
-        signInWithEmailAndPassword(authentication, email, password).then(() => {
-            nav.replace('Tabs')
-        }).catch((err) => {
-            Alert.alert(err.message)
-        })
+    const loginUser = async (email, password) => {
+        try {
+            await firebase.auth().signInWithEmailAndPassword(email, password);
+        }
+        catch (error) {
+            alert(error.message);
+        }
+    }
+
+    const forgotPassword = async (email) => {
+        try {
+            await firebase.auth().sendPasswordResetEmail(email);
+            alert("pasword reset email sent");
+        } catch (error) {
+            alert(error)
+        }
     }
 
     return (
@@ -55,7 +64,11 @@ const Login = () => {
                         }} name={isVisbile ? "eye-off" : "eye"} size={24} color="black" />
                     </View>
 
-                    <TouchableOpacity style={styles.button} onPress={loginUser}>
+                    <TouchableOpacity
+                        style={styles.button}
+                        onPress={() => {
+                            loginUser(email, password)
+                        }}>
                         <Text style={styles.textButton}>
                             Đăng nhập
                         </Text>
@@ -71,6 +84,15 @@ const Login = () => {
                             </Text>
                         </TouchableOpacity>
                     </View>
+                    <TouchableOpacity
+                        style={{ marginTop: 20 }}
+                        onPress={() => {
+                            forgotPassword(email)
+                        }}>
+                        <Text style={{ fontSize: 16, fontWeight: '600', textAlign: 'center' }}>
+                            Quên mật khẩu?
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
             <StatusBar style='auto' />

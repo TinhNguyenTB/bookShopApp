@@ -7,7 +7,7 @@ const Splash = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            nav.replace('SignUp');
+            nav.replace('Tabs');
         }, 2000);
     }, []);
 

@@ -1,12 +1,9 @@
-import { ScrollView, StyleSheet, Text, View, Image, StatusBar, TextInput, TouchableOpacity, Alert } from 'react-native'
+import { ScrollView, StyleSheet, Text, View, Image, StatusBar, TextInput, TouchableOpacity, Alert, InputAccessoryView } from 'react-native'
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import { authentication, database } from '../../FirebaseConfig';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { setDoc, doc } from 'firebase/firestore';
-import uuid from 'react-native-uuid';
+import { firebase } from '../../FirebaseConfig';
 
 const SignUp = () => {
     const [isVisbile, setIsVisbile] = useState(true);
@@ -19,30 +16,38 @@ const SignUp = () => {
     });
     const { username, email, password } = userInformation;
 
-    const uid = uuid.v4();
-
-    const userAccount = () => {
-        createUserWithEmailAndPassword(authentication, email, password)
-            .then(() => {
-                nav.navigate('Login')
-                setDoc(doc(database, "users", uid), {
-                    username: username,
-                    email: email,
-                    id: authentication.currentUser.uid
-                })
-            })
-            .catch(error => {
-                if (error.code === 'auth/email-already-in-use') {
-                    Alert.alert('Email này đã được sử dụng!');
-                }
-
-                if (error.code === 'auth/invalid-email') {
-                    Alert.alert('Địa chỉ email không hợp lệ!');
-                }
-
-                console.error(error);
+    const userAccount = async (username, email, password) => {
+        try {
+            // Đăng ký tài khoản
+            await firebase.auth().createUserWithEmailAndPassword(email, password);
+            // Gửi email xác minh
+            await firebase.auth().currentUser.sendEmailVerification({
+                handleCodeInApp: true,
+                url: 'http://bookshop-27440.firebaseapp.com'
             });
+            // Thông báo khi email xác minh được gửi
+            alert('Verification email sent');
+            // Lưu thông tin người dùng vào Firestore
+            await firebase.firestore().collection('users')
+                .doc(firebase.auth().currentUser.uid)
+                .set({
+                    username,
+                    email
+                });
+        }
+        catch (error) {
+            if (error.code === 'auth/email-already-in-use') {
+                alert('Email này đã được sử dụng!');
+            }
+            else if (error.code === 'auth/invalid-email') {
+                alert('Địa chỉ email không hợp lệ!');
+            }
+            else {
+                console.error(error);
+            }
+        }
     }
+
 
     return (
         <SafeAreaView style={styles.bg}>
@@ -52,7 +57,6 @@ const SignUp = () => {
                     <Text style={styles.title}>
                         Đăng ký tài khoản
                     </Text>
-
                     <Text style={styles.lable}>Tên người dùng</Text>
                     <TextInput maxLength={30} style={styles.input} keyboardType='name-phone-pad'
                         value={username}
@@ -83,8 +87,12 @@ const SignUp = () => {
                             setIsVisbile(!isVisbile)
                         }} name={isVisbile ? "eye-off" : "eye"} size={24} color="black" />
                     </View>
-
-                    <TouchableOpacity style={styles.button} onPress={userAccount}>
+                    <Text style={{ marginTop: 20, textAlign: 'center' }}>
+                        Sau khi đăng ký sẽ tự động đăng nhập
+                    </Text>
+                    <TouchableOpacity style={styles.button} onPress={() => {
+                        userAccount(username, email, password);
+                    }}>
                         <Text style={styles.textButton}>
                             Đăng ký
                         </Text>
