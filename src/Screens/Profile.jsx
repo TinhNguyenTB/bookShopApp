@@ -9,10 +9,10 @@ const Profile = () => {
     const [name, setName] = useState('');
     useEffect(() => {
         firebase.firestore().collection('users').doc(firebase.auth().currentUser.uid).get()
-            .then((snapshot) => {
-                if (snapshot.exists) { // ton tai
-                    setName(snapshot.data())
-                    //console.log(snapshot.data())
+            .then((user) => {
+                if (user.exists) { // ton tai
+                    setName(user.data())
+                    //console.log(user.data())
                 }
                 else {
                     console.log('User does not exist')

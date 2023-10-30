@@ -63,7 +63,9 @@ const Tabs = () => {
                             )
                             :
                             (
-                                <Ionicons name="cart-outline" size={24} color="grey" />
+                                <View>
+                                    <Ionicons name="cart-outline" size={24} color="grey" />
+                                </View>
                             )
                     )
                 }}

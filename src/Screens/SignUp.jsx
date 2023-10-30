@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Feather } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { firebase } from '../../FirebaseConfig';
+import uuid from 'react-native-uuid';
 
 const SignUp = () => {
     const [isVisbile, setIsVisbile] = useState(true);
@@ -15,8 +16,9 @@ const SignUp = () => {
         password: ""
     });
     const { username, email, password } = userInformation;
+    const userId = uuid.v4();
 
-    const userAccount = async (username, email, password) => {
+    const userAccount = async (userId, username, email, password) => {
         try {
             // Đăng ký tài khoản
             await firebase.auth().createUserWithEmailAndPassword(email, password);
@@ -31,6 +33,7 @@ const SignUp = () => {
             await firebase.firestore().collection('users')
                 .doc(firebase.auth().currentUser.uid)
                 .set({
+                    userId,
                     username,
                     email
                 });
@@ -91,7 +94,7 @@ const SignUp = () => {
                         Sau khi đăng ký sẽ tự động đăng nhập
                     </Text>
                     <TouchableOpacity style={styles.button} onPress={() => {
-                        userAccount(username, email, password);
+                        userAccount(userId, username, email, password);
                     }}>
                         <Text style={styles.textButton}>
                             Đăng ký
