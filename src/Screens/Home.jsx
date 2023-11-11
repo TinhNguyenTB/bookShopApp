@@ -2,11 +2,9 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeSearch from '../Components/HomeSearch';
-import Category from '../Components/Category';
 import ProductTitle from '../Components/ProductTitle';
 import ProductCarousel from '../Components/ProductCarousel';
 import FlashMessage from "react-native-flash-message";
-
 const bookData = require('../Utils/books.json');
 const bookSelling = require('../Utils/selling.json');
 
@@ -17,7 +15,6 @@ const Home = () => {
             <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
                 <View style={styles.view}>
                     <HomeSearch />
-                    <Category />
                     <ProductTitle title={'Ưu đãi độc quyền'} />
                     <ProductCarousel data={bookData} />
                     <ProductTitle title={'Sản phẩm bán chạy'} />

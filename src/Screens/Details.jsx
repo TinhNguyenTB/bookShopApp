@@ -35,9 +35,12 @@ const Details = ({ route }) => {
                     <Image style={styles.img} resizeMode='contain' source={{ uri: img }} />
                 </View>
                 <View style={styles.wrap}>
+                    <Text style={styles.name}>
+                        {name.charAt(0).toUpperCase() + name.slice(1)}
+                    </Text>
                     <View style={styles.row}>
-                        <Text style={styles.name}>
-                            {name.charAt(0).toUpperCase() + name.slice(1)}
+                        <Text style={styles.price}>
+                            Giá: {(price / 1000).toFixed(3)}đ
                         </Text>
                         {
                             favouriteData.find((value) => value.name === productData.name) ?
@@ -55,9 +58,6 @@ const Details = ({ route }) => {
                         }
 
                     </View>
-                    <Text style={styles.price}>
-                        Giá: {(price / 1000).toFixed(3)}đ
-                    </Text>
                     <Text>Tác giả: {author}</Text>
                     <Text>Ngôn ngữ: {language}</Text>
 

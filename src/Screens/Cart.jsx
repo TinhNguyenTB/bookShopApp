@@ -1,4 +1,4 @@
-import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, Image, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native'
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
@@ -23,7 +23,7 @@ const Cart = () => {
             <Text style={styles.title}>
                 Giỏ hàng
             </Text>
-            <View style={{ flex: 0.93 }}>
+            <View style={{ flex: 0.97 }}>
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={cartData}
@@ -41,7 +41,26 @@ const Cart = () => {
                                         Giá: {(item.price / 1000).toFixed(3)}đ
                                     </Text>
                                     <AntDesign name="delete" size={30} color="red" onPress={() => {
-                                        dispatch(removeFromCart(item));
+                                        // Hiển thị hộp thoại cảnh báo khi người dùng nhấn nút Xóa
+                                        Alert.alert(
+                                            'Xác nhận',
+                                            `Bạn có chắc muốn xóa '${item.name}' khỏi giỏ hàng?`,
+                                            [
+                                                {
+                                                    text: 'Hủy',
+                                                    onPress: () => console.log('Xóa bị hủy'),
+                                                    style: 'cancel',
+                                                },
+                                                {
+                                                    text: 'Xóa',
+                                                    onPress: () => {
+                                                        dispatch(removeFromCart(item));
+                                                        console.log('Xóa đã được thực hiện');
+                                                    },
+                                                },
+                                            ],
+                                            { cancelable: false }
+                                        );
                                     }} />
                                 </View>
 
@@ -108,7 +127,7 @@ const Cart = () => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 10,
+        padding: 10,
         backgroundColor: 'white',
         flex: 1,
         gap: 15
@@ -150,7 +169,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: 'green',
         borderRadius: 10,
-        height: responsiveHeight(9),
+        height: responsiveHeight(8),
         justifyContent: 'center',
         alignItems: 'center'
     }

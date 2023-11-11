@@ -1,8 +1,9 @@
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native'
+import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native'
 import React from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromFavourite } from '../Redux/FavouriteSlice';
 
@@ -10,6 +11,7 @@ const Favourite = () => {
     const favouriteData = useSelector((state) => state.FavouriteSlice);
     // console.log(favouriteData);
     const dispatch = useDispatch();
+    const nav = useNavigation();
 
     return (
         <SafeAreaView style={styles.container}>
@@ -21,9 +23,14 @@ const Favourite = () => {
                 data={favouriteData}
                 renderItem={({ item, index }) => (
                     <View style={styles.wrap}>
-                        <View style={styles.boxLeft}>
+                        <TouchableOpacity
+                            style={styles.boxLeft}
+                            onPress={() => {
+                                nav.navigate('Details', { info: item })
+                            }}
+                        >
                             <Image style={styles.image} source={{ uri: item.img }} />
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.boxRight}>
                             <View style={{ flex: 0.95, justifyContent: 'space-around' }}>
                                 <Text style={styles.name}>

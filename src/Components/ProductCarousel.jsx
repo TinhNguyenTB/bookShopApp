@@ -31,7 +31,7 @@ const ProductCarousel = ({ data }) => {
                             </Text>
                             <View style={styles.row}>
                                 <Text style={styles.price}>
-                                    {(item.price / 1000).toFixed(3)}đ
+                                    Giá: {(item.price / 1000).toFixed(3)}đ
                                 </Text>
                                 {
                                     cartData.find((value) => value.name === item.name) ?
@@ -95,14 +95,14 @@ const styles = StyleSheet.create({
     name: {
         fontSize: 14,
         fontWeight: '600',
-        flex: 0.5
+        flex: 0.6,
+        textAlign: 'center'
     },
     row: {
         flexDirection: 'row',
-        alignItems: 'center',
-        flex: 0.5,
-        justifyContent: 'flex-end',
-        gap: 20,
+        alignItems: "center",
+        flex: 0.4,
+        gap: 10,
         marginTop: 5
     },
     price: {

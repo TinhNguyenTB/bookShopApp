@@ -7,6 +7,7 @@ import Cart from './Cart';
 import Profile from './Profile';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import Product from './Product';
 
 
 const Tab = createBottomTabNavigator();
@@ -32,6 +33,22 @@ const Tabs = () => {
                             :
                             (
                                 <Ionicons name="home-outline" size={24} color="grey" />
+                            )
+                    )
+                }}
+            />
+            <Tab.Screen name='Product' component={Product}
+                options={{
+                    tabBarIcon: ({ focused }) => (
+                        focused ?
+                            (
+                                <View style={styles.icon}>
+                                    <Ionicons name="book" size={24} color="#007FFF" />
+                                </View>
+                            )
+                            :
+                            (
+                                <Ionicons name="book-outline" size={24} color="grey" />
                             )
                     )
                 }}
